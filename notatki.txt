@@ -1,0 +1,5 @@
+po włączeniu trybu szarości w apce wszystko powinno być widoczne (kontrast)
+
+białe tło lepsze? wieczorem?
+
+uważać na ok-button-button
