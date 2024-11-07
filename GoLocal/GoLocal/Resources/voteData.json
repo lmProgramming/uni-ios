@@ -1,0 +1,19 @@
+[
+    {
+        "event_id": 1,
+        "name": "Vote on the date",
+        "options":
+            [
+                {
+                    "answer": "1.12.2024",
+                    "amount": 112
+                    }
+                ,
+                {
+                    "answer": "2.12.2024",
+                    "amount": 19312
+                }
+            ]
+        }
+    },
+]
