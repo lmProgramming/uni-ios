@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "SwiftUI Workshop",
+        "startDate": "2024-11-15T10:00:00Z",
+        "endDate": "2024-11-15T16:00:00Z",
+        "description": "A full-day workshop on SwiftUI development.",
+        "imageName": "hiddenlake",
+        "location": {
+            "city": "Wroclaw",
+            "country": "PL",
+            "streetName": "Ladna",
+            "houseId": "3/25",
+            "coordinates": {
+                "longitude": 51.1093,
+                "latitude": 17.0386
+            },
+        }
+    },
+    {
+        "id": 2,
+        "name": "Python Workshop",
+        "startDate": "2024-11-15T10:00:00Z",
+        "endDate": "2024-11-15T16:00:00Z",
+        "description": "A full-day workshop on SwiftUI development.",
+        "imageName": "icybay",
+        "location": {
+            "city": "Wroclaw",
+            "country": "PL",
+            "streetName": "Ladna",
+            "houseId": "3/25",
+            "coordinates": {
+                "longitude": -122.17799,
+                "latitude": 49.495442
+            },
+        }
+    },
+]
