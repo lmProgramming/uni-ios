@@ -12,7 +12,7 @@ struct EventDetail: View {
     
     var body: some View {
         ScrollView {
-            MapView(coordinate: event.location.locationCoordinate).frame(height: 300)
+            MapView(coordinate: event.location.locationCoordinate, label: event.location.description).frame(height: 300)
             
             CircleImage(image: event.image)
                 .offset(y: -130)
@@ -21,24 +21,47 @@ struct EventDetail: View {
             VStack(alignment: .leading) {
                 Text(event.name).font(.title).foregroundStyle(.black)
                 HStack {
-                    Text(event.location.description).font(.subheadline)
-                    Spacer()
+                    Text("Starts on " + dateFormatter.string(from: event.startDate) +
+                         (event.endDate == nil ? "" :
+                         "\nEnds on " + dateFormatter.string(from: event.endDate!)))
                 }
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 
+                Text(event.location.description).font(.subheadline)
                 Divider()
                 
-                Text("about".localize())
+                Text("about")
                     .font(.title2)
                 Text(event.description)
             }
             .padding()
             
             Spacer()
+            
+            let relatedVotes = findRelatedVotes;
+            if !relatedVotes.isEmpty
+            {
+                NavigationSplitView {
+                    List(findRelatedVotes) { vote in
+                        NavigationLink {
+                            VoteDetail(vote: vote)
+                        } label: {
+                            Text("Vote ID: \(vote.id)")
+                        }
+                    }
+                    .navigationTitle("Votings").multilineTextAlignment(.center)
+                } detail: {
+                    Text("Related votings")
+                }
+            }
         }
         .navigationTitle(event.name)
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    var findRelatedVotes: [Vote] {
+        return votes.filter { $0.eventId == event.id }
     }
 }
 

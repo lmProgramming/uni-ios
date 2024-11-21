@@ -13,7 +13,7 @@ struct Event: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     var startDate: Date
-    var endDate: Date
+    var endDate: Date?
     var description: String
     
     private var imageName: String

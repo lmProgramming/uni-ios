@@ -1,16 +1,117 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "sign" : {
+    "about" : {
+
+    },
+    "Accessory View" : {
+
+    },
+    "events" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "events"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "wydarzenia"
+          }
+        }
+      }
+    },
+    "Hello" : {
+
+    },
+    "Home" : {
+
+    },
+    "Profile" : {
+
+    },
+    "Related votings" : {
+
+    },
+    "settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "settings"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "ustawienia"
+          }
+        }
+      }
+    },
+    "Settings" : {
+
+    },
+    "sign" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sign in"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "zaloguj sie"
           }
         }
       }
+    },
+    "Vote ID: %lld" : {
+
+    },
+    "votes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "votes"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "glosowania"
+          }
+        }
+      }
+    },
+    "votes_count_descriptor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "votes"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "glosow"
+          }
+        }
+      }
+    },
+    "Votings" : {
+
     }
   },
   "version" : "1.0"

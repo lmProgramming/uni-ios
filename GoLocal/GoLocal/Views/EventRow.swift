@@ -21,8 +21,5 @@ struct EventRow: View {
 }
 
 #Preview("Turtle Rock") {
-    Group {
-        EventRow(event: events[0])
-        EventRow(event: events[1])
-    }
+    EventRow(event: events[0])
 }

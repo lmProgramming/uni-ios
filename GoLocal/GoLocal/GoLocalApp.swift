@@ -8,6 +8,8 @@
 import SwiftUI
 import SwiftData
 
+let dateFormatter = DateFormatter()
+
 @main
 struct GoLocalApp: App {
     var sharedModelContainer: ModelContainer = {
@@ -15,6 +17,8 @@ struct GoLocalApp: App {
             Item.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
 
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])

@@ -3,27 +3,35 @@ import SwiftUI
 struct EventList: View {
     @State private var searchText = ""
     @State private var searchIsActive = false
-    private let prompt = NSLocalizedString("sign", comment: "")
+    private let eventPageTitle = NSLocalizedString("events", comment: "").capitalized
 
     var body: some View {
-        NavigationSplitView
-        {
-            List(searchResults) {
-                event in NavigationLink {
-                    EventDetail(event: event)
-                } label: {
-                    EventRow(event: event)
+        NavigationView {
+            VStack {
+                VStack {
+                    List(searchResults) { event in
+                        NavigationLink {
+                            EventDetail(event: event)
+                        } label: {
+                            EventRow(event: event)
+                        }
+                    }
+                    .navigationTitle(eventPageTitle)
+                    .searchable(text: $searchText, isPresented: $searchIsActive)
                 }
+                .navigationTitle(eventPageTitle)
+                
+                Spacer()
+                
+                BottomTabBar(selected: 0)
             }
-            .navigationTitle(prompt)
-            .searchable(text: $searchText, isPresented: $searchIsActive)
-        }
-        detail: {
-            Text(prompt)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.white)
         }
     }
     
     var searchResults: [Event] {
+        print(events.count)
         if searchText.isEmpty {
             return events
         } else {

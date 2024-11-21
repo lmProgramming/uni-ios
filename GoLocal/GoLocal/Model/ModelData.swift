@@ -8,11 +8,11 @@
 import Foundation
 
 var events: [Event] = load("eventData.json")
+var votes: [Vote] = load("voteData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
-    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-    else{
+    guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
         fatalError("Couldn't find \(filename) in main bundle.")
     }
     

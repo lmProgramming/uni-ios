@@ -10,32 +10,47 @@ import SwiftUI
 struct VotesList: View {
     @State private var searchText = ""
     @State private var searchIsActive = false
-    private let prompt = NSLocalizedString("sign", comment: "")
+    private let votePageTitle = NSLocalizedString("votes", comment: "")
 
     var body: some View {
-        NavigationSplitView
-        {
-            List(searchResults) {
-                event in NavigationLink {
-                    EventDetail(event: event)
-                } label: {
-                    EventRow(event: event)
+        NavigationView {
+            VStack {
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach(searchResults) { vote in
+                            VStack {
+                                if let relatedEvent = findRelatedEvent(vote: vote) {
+                                    NavigationLink(destination: EventDetail(event: relatedEvent)) {
+                                        VoteRow(vote: vote)
+                                            .padding()
+                                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.1)))
+                                    }
+                                    .padding(.vertical, 4)
+                                }
+                            }
+                        }
+                    }
                 }
+                .navigationTitle(votePageTitle).foregroundColor(.black)
+                .searchable(text: $searchText, isPresented: $searchIsActive)
+                
+                Spacer()
+                
+                BottomTabBar(selected: 1)
             }
-            .navigationTitle(prompt)
-            .searchable(text: $searchText, isPresented: $searchIsActive)
-        }
-        detail: {
-            Text(prompt)
         }
     }
     
-    var searchResults: [Event] {
+    var searchResults: [Vote] {
         if searchText.isEmpty {
-            return events
+            return votes
         } else {
-            return events.filter { $0.name.contains(searchText) }
+            return votes.filter { $0.question.contains(searchText) }
         }
+    }
+    
+    func findRelatedEvent(vote: Vote) -> Event? {
+        return events.first { $0.id == vote.eventId }
     }
 }
 

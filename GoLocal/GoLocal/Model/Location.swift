@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
+var locationManager: CLLocationManager = CLLocationManager()
+
 struct Location: Hashable, Codable {
     var city: String
     var country: String
@@ -26,6 +28,6 @@ struct Location: Hashable, Codable {
     }
     
     var description: String {
-        return "\(city), \(country): \(houseId) - \(streetName), "
+        return "\(city), \(country): \(houseId) - \(streetName)"
     }
 }

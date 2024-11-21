@@ -21,3 +21,16 @@ struct ContentView: View {
     ContentView()
         .modelContainer(for: Item.self, inMemory: true)
 }
+
+#if DEBUG
+struct ContentView_Previews: PreviewProvider {
+   static var previews: some View {
+      Group {
+         ContentView()
+            .environment(\.colorScheme, .light)
+         ContentView()
+            .environment(\.colorScheme, .dark)
+      }
+   }
+}
+#endif
