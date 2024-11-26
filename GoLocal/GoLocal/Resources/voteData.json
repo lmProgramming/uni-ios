@@ -3,6 +3,7 @@
         "id": 1,
         "eventId": 1,
         "question": "Vote on the date",
+        "endDate": "2024-11-15T16:00:00Z",
         "options": [
             {
                 "id": 1,
@@ -20,6 +21,7 @@
         "id": 2,
         "eventId": 1,
         "question": "Vote on the place",
+        "endDate": "2024-11-15T16:00:00Z",
         "options": [
             {
                 "id": 1,

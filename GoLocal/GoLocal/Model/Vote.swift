@@ -19,6 +19,7 @@ struct Vote: Hashable, Codable, Identifiable {
     var id: Int
     var eventId: Int
     var question: String
+    var endDate: Date
     
     var options: [VotingAnswerOption]
       
@@ -32,4 +33,8 @@ struct Vote: Hashable, Codable, Identifiable {
         
         return sum
     }
+}
+
+func GetNextVoteID() -> Int {
+    return Int.random(in: 1000..<1000000000000000)
 }

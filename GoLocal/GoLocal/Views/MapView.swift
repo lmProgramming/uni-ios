@@ -1,10 +1,3 @@
-//
-//  MapView.swift
-//  Landmarks
-//
-//  Created by stud on 15/10/2024.
-//
-
 import SwiftUI
 import MapKit
 
@@ -16,16 +9,20 @@ struct MapView: View {
         NavigationView {
             VStack {
                 ZStack(alignment: .topTrailing) {
-                    Map(position: .constant(.region(region))) // Your Map view
+                    Map(coordinateRegion: .constant(region), showsUserLocation: true, annotationItems: events) { event in
+                        // MapAnnotation displays each event on the map
+                        MapPin(coordinate: event.location.locationCoordinate, tint: .blue) // You can also use MapMarker or MapAnnotation if you want custom views for each pin
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
                     // Adding a label at the top right
                     Text(label)
                         .font(.headline)
                         .padding(8)
-                        .background(Color.blue.opacity(0.7)) // Background for better visibility
+                        .background(Color.blue.opacity(0.7))
                         .cornerRadius(8)
-                        .padding(16) // Padding from the edges
-                        .shadow(radius: 5) // Optional shadow for better visibility
+                        .padding(16)
+                        .shadow(radius: 5)
                         .foregroundStyle(Color.white)
                 }
                 
@@ -35,15 +32,24 @@ struct MapView: View {
             }
             .navigationTitle("Map")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.white)
         }
     }
     
-    private var region: MKCoordinateRegion{
-        MKCoordinateRegion(
-            center: coordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-        )
+    private var region: MKCoordinateRegion {
+        // Calculate a region that fits all event locations (simple approximation)
+        if let firstEvent = events.first {
+            let center = firstEvent.location.locationCoordinate
+            return MKCoordinateRegion(
+                center: center,
+                span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+            )
+        } else {
+            // If no events, return a default region
+            return MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), // Default to San Francisco
+                span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+            )
+        }
     }
 }
 

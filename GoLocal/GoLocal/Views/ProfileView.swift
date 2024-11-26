@@ -21,8 +21,8 @@ struct ProfileView: View {
             }
             .navigationTitle(profilePageTitle + ", " + user.name)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.white)
         }
+        .background()
     }
 }
 

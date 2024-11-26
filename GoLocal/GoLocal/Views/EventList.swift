@@ -26,7 +26,7 @@ struct EventList: View {
                 BottomTabBar(selected: 0)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.white)
+            .background()
         }
     }
     

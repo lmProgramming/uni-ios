@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct EventDetail: View {
-    var event: Event
+    var event: Event    
+    private let startsOnText = NSLocalizedString("starts_on", comment: "").capitalizingFirstLetter()
+    private let endsInText = NSLocalizedString("ends_in", comment: "").capitalizingFirstLetter()
     
     var body: some View {
         ScrollView {
@@ -21,9 +23,7 @@ struct EventDetail: View {
             VStack(alignment: .leading) {
                 Text(event.name).font(.title).foregroundStyle(.black)
                 HStack {
-                    Text("Starts on " + dateFormatter.string(from: event.startDate) +
-                         (event.endDate == nil ? "" :
-                         "\nEnds on " + dateFormatter.string(from: event.endDate!)))
+                    Text(startsOnText + " " + dateFormatter.string(from: event.startDate) + getEndText)
                 }
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
@@ -62,6 +62,11 @@ struct EventDetail: View {
     
     var findRelatedVotes: [Vote] {
         return votes.filter { $0.eventId == event.id }
+    }
+    
+    var getEndText: String {
+        return event.endDate == nil ? "" :
+        ("\n" + endsInText + " " + dateFormatter.string(from: event.endDate!))
     }
 }
 

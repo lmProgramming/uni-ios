@@ -25,6 +25,20 @@ struct MenuButton<Destination: View>: View {
             .frame(maxWidth: .infinity) // Stretch button width to fill the HStack
             .padding(.top, 5) // Add spacing between icon and label (optional)
         }
-        .buttonStyle(PlainButtonStyle()) // Avoid default button style decoration
+        .buttonStyle(PlainButtonStyle())
+        .background()
     }
 }
+
+#if DEBUG
+struct MenuButton_Previews: PreviewProvider {
+   static var previews: some View {
+      Group {
+          MenuButton(iconName: "list.dash", description: "Events", nextView: EventList(), selected: true)
+            .environment(\.colorScheme, .light)
+          MenuButton(iconName: "list.dash", description: "Events", nextView: EventList(), selected: true)
+            .environment(\.colorScheme, .dark)
+      }
+   }
+}
+#endif

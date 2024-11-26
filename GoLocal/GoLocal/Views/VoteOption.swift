@@ -39,7 +39,7 @@ struct VoteOption: View {
 
 #Preview {
     let mockVotes = [
-        Vote(id: 1, eventId: 1, question: "Vote on the date", options: [
+        Vote(id: 1, eventId: 1, question: "Vote on the date", endDate: Date.init(), options: [
             VotingAnswerOption(id: 1, answer: "1.12.2024", amount: 112),
             VotingAnswerOption(id: 2, answer: "2.12.2024", amount: 19312)
         ])

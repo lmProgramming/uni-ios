@@ -2,10 +2,34 @@
   "sourceLanguage" : "en",
   "strings" : {
     "about" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "opis"
+          }
+        }
+      }
     },
     "Accessory View" : {
 
+    },
+    "ends_in" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ends in"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "konczy sie"
+          }
+        }
+      }
     },
     "events" : {
       "extractionState" : "manual",
@@ -25,16 +49,44 @@
       }
     },
     "Hello" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "witaj"
+          }
+        }
+      }
     },
     "Home" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "glowna"
+          }
+        }
+      }
     },
     "Profile" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "profil"
+          }
+        }
+      }
     },
     "Related votings" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "powiązane glosowania"
+          }
+        }
+      }
     },
     "settings" : {
       "extractionState" : "manual",
@@ -54,7 +106,14 @@
       }
     },
     "Settings" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ustawienia"
+          }
+        }
+      }
     },
     "sign" : {
       "extractionState" : "manual",
@@ -73,8 +132,32 @@
         }
       }
     },
+    "starts_on" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "starts on"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zaczyna się"
+          }
+        }
+      }
+    },
     "Vote ID: %lld" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID glosowania"
+          }
+        }
+      }
     },
     "votes" : {
       "extractionState" : "manual",
@@ -111,7 +194,14 @@
       }
     },
     "Votings" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "glosowania"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

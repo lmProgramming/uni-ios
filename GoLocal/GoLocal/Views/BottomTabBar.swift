@@ -8,13 +8,14 @@ struct BottomTabBar: View {
         HStack {
             MenuButton(iconName: "list.dash", description: "Events", nextView: EventList(), selected: selected == 0)
             
-            MenuButton(iconName: "checkmark.circle", description: "Votes", nextView: VotesList(), selected: selected == 1)
+            MenuButton(iconName: "square.and.pencil", description: "Votes", nextView: VotesList(), selected: selected == 1)
             
             MenuButton(iconName: "map", description: "Map", nextView: MapView(coordinate: coordinateCur, label: "Your location"), selected: selected == 2)
             
             MenuButton(iconName: "person.circle", description: "Profile", nextView: ProfileView(), selected: selected == 3)
         }
-        .frame(maxWidth: .infinity) // Ensure all buttons are evenly spaced
+        .frame(maxWidth: .infinity)
+        .background()
     }
     
     var coordinateCur: CLLocationCoordinate2D {

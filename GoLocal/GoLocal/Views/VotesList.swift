@@ -1,15 +1,9 @@
-//
-//  VotesList.swift
-//  GoLocal
-//
-//  Created by stud on 07/11/2024.
-//
-
 import SwiftUI
 
 struct VotesList: View {
     @State private var searchText = ""
     @State private var searchIsActive = false
+    @State private var isCreatingNewVote = false
     private let votePageTitle = NSLocalizedString("votes", comment: "")
 
     var body: some View {
@@ -19,24 +13,54 @@ struct VotesList: View {
                     VStack(alignment: .leading) {
                         ForEach(searchResults) { vote in
                             VStack {
-                                if let relatedEvent = findRelatedEvent(vote: vote) {
-                                    NavigationLink(destination: EventDetail(event: relatedEvent)) {
-                                        VoteRow(vote: vote)
-                                            .padding()
-                                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.1)))
-                                    }
-                                    .padding(.vertical, 4)
+                                HStack {
+                                    voteRowLink(vote: vote)
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .foregroundColor(.gray)
                                 }
+                                .padding()
+                                .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.1)))
                             }
                         }
                     }
                 }
                 .navigationTitle(votePageTitle).foregroundColor(.black)
                 .searchable(text: $searchText, isPresented: $searchIsActive)
+                .padding()
                 
                 Spacer()
                 
                 BottomTabBar(selected: 1)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        isCreatingNewVote.toggle()
+                    }) {
+                        Text("Create New Vote")
+                    }
+                }
+            }
+            .sheet(isPresented: $isCreatingNewVote) {
+                CreateVoteView(isPresented: $isCreatingNewVote)
+            }
+        }
+        .background()
+    }
+    
+    func voteRowLink(vote: Vote) -> some View {
+        Group {
+            if let relatedEvent = findRelatedEvent(vote: vote) {
+                VStack {
+                    NavigationLink(destination: EventDetail(event: relatedEvent)) {
+                        VoteRowTop(vote: vote, event: relatedEvent)
+                    }
+                    .padding(.vertical, 4)
+                    VoteRowBottom(vote: vote, event: relatedEvent)
+                }
+            } else {
+                EmptyView()
             }
         }
     }
