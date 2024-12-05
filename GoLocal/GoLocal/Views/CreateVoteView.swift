@@ -15,12 +15,10 @@ struct CreateVoteView: View {
                     .font(.headline)
                     .padding()
                 
-                // Vote Question TextField
                 TextField("Enter vote question", text: $voteQuestion)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                // Event Picker
                 VStack(alignment: .leading) {
                     Text("Select Related Event:")
                         .font(.subheadline)
@@ -28,9 +26,9 @@ struct CreateVoteView: View {
                         .padding(.bottom, 5)
                     
                     Picker("Select Event", selection: $selectedEvent) {
-                        ForEach(events, id: \.id) { event in
-                            Text(event.name) // Display event names in the Picker
-                                .tag(event as Event?) // Tag each event with itself to identify the selection
+                        ForEach(findUserEvents(userId: user.id), id: \.id) { event in
+                            Text(event.name)
+                                .tag(event as Event?)
                         }
                     }
                     .pickerStyle(MenuPickerStyle())
@@ -39,20 +37,18 @@ struct CreateVoteView: View {
                 }
                 .padding()
 
-                // End Date Picker
                 VStack(alignment: .leading) {
                     Text("Select End Date:")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                         .padding(.bottom, 5)
                     
-                    DatePicker("End Date", selection: $endDate, displayedComponents: .date)
+                    DatePicker("End Date", selection: $endDate, displayedComponents: [.date, .hourAndMinute])
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.1)))
                 }
                 .padding()
 
-                // Vote Options - dynamic list of text fields
                 VStack(alignment: .leading) {
                     Text("Vote Options:")
                         .font(.subheadline)
@@ -66,7 +62,6 @@ struct CreateVoteView: View {
                     }
                     
                     Button(action: {
-                        // Add a new empty option
                         voteOptions.append("")
                     }) {
                         Text("Add Option")
@@ -77,10 +72,8 @@ struct CreateVoteView: View {
                 }
                 .padding()
 
-                // Action buttons
                 HStack {
                     Button("Save Vote") {
-                        // Handle saving the vote
                         saveVote()
                     }
                     .padding()
@@ -91,7 +84,6 @@ struct CreateVoteView: View {
                     Spacer()
 
                     Button("Cancel") {
-                        // Dismiss the modal without saving
                         isPresented = false
                     }
                     .padding()
@@ -109,31 +101,24 @@ struct CreateVoteView: View {
         }
     }
     
-    // This function saves the new vote (you can expand it to handle actual data storage)
     func saveVote() {
         guard let selectedEvent = selectedEvent, !voteQuestion.isEmpty, !voteOptions.isEmpty else {
-            // Handle error: either no event selected, vote question empty, or no options provided
             print("Error: Missing event, vote question, or options.")
             return
         }
         
-        // Create a list of voting options from the entered text
         let votingAnswerOptions = voteOptions.map { VotingAnswerOption(id: GetNextVoteID(), answer: $0, amount: 0) }
         
-        // Create a new vote with the selected event, vote question, end date, and options
         let newVote = Vote(id: GetNextVoteID(), eventId: selectedEvent.id, question: voteQuestion, endDate: endDate, options: votingAnswerOptions)
         
-        // Perform the save operation, e.g., add to votes array or save to a database
         print("New vote created: \(newVote)")
         
         votes.append(newVote)
         
-        // Dismiss the modal
         isPresented = false
     }
 }
 
-// Preview (add sample data for testing)
 #Preview {
     CreateVoteView(isPresented: .constant(true))
 }

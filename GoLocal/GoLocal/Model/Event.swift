@@ -15,8 +15,10 @@ struct Event: Hashable, Codable, Identifiable {
     var startDate: Date
     var endDate: Date?
     var description: String
+    var ownerId: Int
     
-    private var imageName: String
+    var imageName: String
+    var category: String 
     var image: Image {
         Image(imageName)
     }
@@ -27,4 +29,10 @@ struct Event: Hashable, Codable, Identifiable {
         var latitude: Double
         var longitude: Double
     }
+}
+
+let categories = ["All", "Music", "Sports", "Art", "Food", "Learning"]
+
+func GetNextEventID() -> Int {
+    return (events.max(by: { $0.id < $1.id })?.id ?? 0) + 1
 }

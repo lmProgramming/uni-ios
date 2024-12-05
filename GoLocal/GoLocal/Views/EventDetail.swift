@@ -14,7 +14,7 @@ struct EventDetail: View {
     
     var body: some View {
         ScrollView {
-            MapView(coordinate: event.location.locationCoordinate, label: event.location.description).frame(height: 300)
+            MapInsideView(coordinate: event.location.locationCoordinate, label: event.location.description).frame(height: 300)
             
             CircleImage(image: event.image)
                 .offset(y: -130)
@@ -45,9 +45,9 @@ struct EventDetail: View {
                 NavigationSplitView {
                     List(findRelatedVotes) { vote in
                         NavigationLink {
-                            VoteDetail(vote: vote)
+                            VoteRow(vote: vote, event: event)
                         } label: {
-                            Text("Vote ID: \(vote.id)")
+                            Text(String(vote.question))
                         }
                     }
                     .navigationTitle("Votings").multilineTextAlignment(.center)

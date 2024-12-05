@@ -36,5 +36,5 @@ struct Vote: Hashable, Codable, Identifiable {
 }
 
 func GetNextVoteID() -> Int {
-    return Int.random(in: 1000..<1000000000000000)
+    return (votes.max(by: { $0.id < $1.id })?.id ?? 0) + 1
 }

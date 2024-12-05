@@ -6,14 +6,16 @@
         "endDate": "2024-11-15T16:00:00Z",
         "description": "A full-day workshop on SwiftUI development.",
         "imageName": "hiddenlake",
+        "ownerId": 0,
+        "category": "Learning",
         "location": {
             "city": "Wroclaw",
             "country": "PL",
             "streetName": "Ladna",
             "houseId": "3/25",
             "coordinates": {
-                "longitude": 51.1093,
-                "latitude": 17.0386
+                "latitude": 51.1093,
+                "longitude": 17.0386
             },
         }
     },
@@ -24,14 +26,36 @@
         "endDate": "2024-11-15T16:00:00Z",
         "description": "A full-day workshop on SwiftUI development.",
         "imageName": "icybay",
+        "ownerId": 0,
+        "category": "Learning",
         "location": {
             "city": "Wroclaw",
             "country": "PL",
             "streetName": "Piekna",
             "houseId": "3/25",
             "coordinates": {
-                "longitude": -122.17799,
-                "latitude": 49.495442
+                "latitude": 51.1093,
+                "longitude": 17.0486
+            },
+        }
+    },
+    {
+        "id": 3,
+        "name": "Music Party",
+        "startDate": "2024-11-15T10:00:00Z",
+        "endDate": "2024-11-15T16:00:00Z",
+        "description": "A full-day music party.",
+        "imageName": "icybay",
+        "ownerId": 0,
+        "category": "Music",
+        "location": {
+            "city": "Wroclaw",
+            "country": "PL",
+            "streetName": "Przepiekna",
+            "houseId": "3/25",
+            "coordinates": {
+                "latitude": 51.2093,
+                "longitude": 17.0486
             },
         }
     },

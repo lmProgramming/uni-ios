@@ -10,10 +10,18 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @State private var loggedIn = false
     @Query private var items: [Item]
 
-    var body: some View {
-        EventList()
+    var body: some View {        
+        if loggedIn
+        {
+            EventList()
+        }
+        else
+        {
+            StartPage(loggedIn: $loggedIn)
+        }
     }
 }
 
@@ -21,16 +29,3 @@ struct ContentView: View {
     ContentView()
         .modelContainer(for: Item.self, inMemory: true)
 }
-
-#if DEBUG
-struct ContentView_Previews: PreviewProvider {
-   static var previews: some View {
-      Group {
-         ContentView()
-            .environment(\.colorScheme, .light)
-         ContentView()
-            .environment(\.colorScheme, .dark)
-      }
-   }
-}
-#endif

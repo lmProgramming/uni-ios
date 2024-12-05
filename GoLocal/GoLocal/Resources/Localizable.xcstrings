@@ -3,6 +3,12 @@
   "strings" : {
     "about" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "about"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12,7 +18,20 @@
       }
     },
     "Accessory View" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessory View"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widok akcesoriów"
+          }
+        }
+      }
     },
     "ends_in" : {
       "extractionState" : "manual",
@@ -26,7 +45,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "konczy sie"
+            "value" : "kończy się"
           }
         }
       }
@@ -50,6 +69,12 @@
     },
     "Hello" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
@@ -60,16 +85,28 @@
     },
     "Home" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "glowna"
+            "value" : "główna"
           }
         }
       }
     },
     "Profile" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
@@ -80,10 +117,16 @@
     },
     "Related votings" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Related votings"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "powiązane glosowania"
+            "value" : "powiązane głosowania"
           }
         }
       }
@@ -107,6 +150,12 @@
     },
     "Settings" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
@@ -127,7 +176,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "zaloguj sie"
+            "value" : "zaloguj się"
           }
         }
       }
@@ -151,10 +200,16 @@
     },
     "Vote ID: %lld" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vote ID: %lld"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ID glosowania"
+            "value" : "ID głosowania: %lld"
           }
         }
       }
@@ -171,7 +226,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "glosowania"
+            "value" : "głosowania"
           }
         }
       }
@@ -188,17 +243,23 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "glosow"
+            "value" : "głosów"
           }
         }
       }
     },
     "Votings" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votings"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "glosowania"
+            "value" : "głosowania"
           }
         }
       }

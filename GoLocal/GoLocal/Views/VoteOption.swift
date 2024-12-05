@@ -15,7 +15,6 @@ struct VoteOption: View {
     
     var body: some View {
         HStack{
-            Spacer()
             Button(action: {
                 print("Selected option: \(votingOption.answer)")
             }) {
@@ -29,11 +28,14 @@ struct VoteOption: View {
             let progress: Double = Double(votingOption.amount) / Double(totalVotes)
             
             VStack{
+                Spacer()
                 HorizontalProgressBarRepresentable(progress: progress)
                 
                 Text(String(votingOption.amount) + " " + voteText)
+                Spacer()
             }
-        }
+        }        
+        .frame(height: 65)
     }
 }
 

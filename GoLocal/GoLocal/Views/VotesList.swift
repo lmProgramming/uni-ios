@@ -34,11 +34,14 @@ struct VotesList: View {
                 BottomTabBar(selected: 1)
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        isCreatingNewVote.toggle()
-                    }) {
-                        Text("Create New Vote")
+                if findUserEvents(userId: user.id).count > 0
+                {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            isCreatingNewVote.toggle()
+                        }) {
+                            Text("Create New Vote")
+                        }
                     }
                 }
             }
