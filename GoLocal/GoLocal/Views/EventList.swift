@@ -20,10 +20,6 @@ struct EventList: View {
                 }
                 .navigationTitle(eventPageTitle)
                 .searchable(text: $searchText, isPresented: $searchIsActive)
-                
-                Spacer()
-                
-                BottomTabBar(selected: 0)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -91,7 +91,7 @@ struct ProfileView: View {
                 
                 Spacer()
                 
-                BottomTabBar(selected: 3)
+                BottomTabBar(selected: 3, loggedIn: $loggedIn)
             }
         }
     }
@@ -113,6 +113,6 @@ struct ProfileView: View {
 }
 
 #Preview {
-    @Binding var loggedIn: Bool = true
-    ProfileView(loggedIn: loggedIn)
+    @State var loggedIn: Bool = false
+    ProfileView(loggedIn: $loggedIn)
 }

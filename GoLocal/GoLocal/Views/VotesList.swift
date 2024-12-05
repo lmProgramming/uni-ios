@@ -28,10 +28,6 @@ struct VotesList: View {
                 .navigationTitle(votePageTitle).foregroundColor(.black)
                 .searchable(text: $searchText, isPresented: $searchIsActive)
                 .padding()
-                
-                Spacer()
-                
-                BottomTabBar(selected: 1)
             }
             .toolbar {
                 if findUserEvents(userId: user.id).count > 0

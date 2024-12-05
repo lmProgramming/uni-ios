@@ -9,21 +9,21 @@ struct MenuButton<Destination: View>: View {
     var body: some View {
         let color: Color = selected ? .blue : .gray
         NavigationLink(destination: nextView
-                        .navigationBarHidden(true) // Hide navigation bar on this view
-                        .navigationBarBackButtonHidden(true) // Hide "Back" button
+                        .navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true) 
         ) {
             VStack {
                 Image(systemName: iconName)
                     .font(.system(size: 30))
-                    .frame(height: 30) // Force a height for the icon
+                    .frame(height: 30) 
                 
                 Text(description)
-                    .font(.caption) // Optional: Adjust the font size if needed
-                    .lineLimit(1) // Prevent multiline labels
+                    .font(.caption)
+                    .lineLimit(1) 
             }
-            .foregroundColor(color) // Set icon and label color
-            .frame(maxWidth: .infinity) // Stretch button width to fill the HStack
-            .padding(.top, 5) // Add spacing between icon and label (optional)
+            .foregroundColor(color) 
+            .frame(maxWidth: .infinity)
+            .padding(.top, 5)
         }
         .buttonStyle(PlainButtonStyle())
         .background()

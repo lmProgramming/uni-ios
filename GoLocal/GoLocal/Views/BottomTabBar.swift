@@ -2,8 +2,9 @@ import SwiftUI
 import CoreLocation
 
 struct BottomTabBar: View {
-    var selected: Int
-    
+    @Binding var selected: Int
+    @Binding var loggedIn: Bool
+
     var body: some View {
         HStack {
             MenuButton(iconName: "list.dash", description: "Events", nextView: EventList(), selected: selected == 0)
@@ -12,7 +13,7 @@ struct BottomTabBar: View {
             
             MenuButton(iconName: "map", description: "Map", nextView: MapView(coordinate: coordinateCur, label: "Your location"), selected: selected == 2)
             
-            MenuButton(iconName: "person.circle", description: "Profile", nextView: ProfileView(), selected: selected == 3)
+            MenuButton(iconName: "person.circle", description: "Profile", nextView: ProfileView(loggedIn: $loggedIn), selected: selected == 3)
         }
         .frame(maxWidth: .infinity)
         .background()
@@ -24,5 +25,6 @@ struct BottomTabBar: View {
 }
 
 #Preview {
-    BottomTabBar(selected: 0)
+    @State var loggedIn = false
+    BottomTabBar(selected: 0, loggedIn: $loggedIn)
 }

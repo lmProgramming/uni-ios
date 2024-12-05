@@ -45,10 +45,6 @@ struct MapView: View {
                         .shadow(radius: 5)
                         .foregroundStyle(Color.white)
                 }
-                
-                Spacer()
-                
-                BottomTabBar(selected: 2)
             }
             .navigationTitle("Map")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
