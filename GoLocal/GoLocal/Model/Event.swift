@@ -1,10 +1,3 @@
-//
-//  Landmark.swift
-//  Landmarks
-//
-//  Created by stud on 15/10/2024.
-//
-
 import Foundation
 import SwiftUI
 import CoreLocation
@@ -16,20 +9,38 @@ struct Event: Hashable, Codable, Identifiable {
     var endDate: Date?
     var description: String
     var ownerId: Int
-    
     var imageName: String
-    var category: String 
+    var category: String
+    var coordinates: Coordinates
+    
     var image: Image {
         Image(imageName)
     }
     
-    var location: Location
+    var cllCoordinates: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+    }
+
+    var locationText: String?
+}
+
+class EventViewModel: ObservableObject {
+    @Published var event: Event
     
-    struct Coordinates: Hashable, Codable{
-        var latitude: Double
-        var longitude: Double
+    init(event: Event) {
+        self.event = event
+        fetchLocationText()
+    }
+    
+    func fetchLocationText() {
+        getLocationFromCoordinates(event.coordinates) { [weak self] address in
+            DispatchQueue.main.async {
+                self?.event.locationText = address
+            }
+        }
     }
 }
+
 
 let categories = ["All", "Music", "Sports", "Art", "Food", "Learning"]
 

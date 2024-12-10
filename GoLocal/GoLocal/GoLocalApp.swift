@@ -1,10 +1,3 @@
-//
-//  LandmarksApp.swift
-//  Landmarks
-//
-//  Created by stud on 15/10/2024.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -30,7 +23,15 @@ struct GoLocalApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(sharedModelContainer)
         }
-        .modelContainer(sharedModelContainer)
+    }
+}
+
+struct GoLocalApp_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .modelContainer(GoLocalApp().sharedModelContainer)
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
     }
 }

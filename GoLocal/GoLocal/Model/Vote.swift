@@ -1,10 +1,3 @@
-//
-//  Vote.swift
-//  GoLocal
-//
-//  Created by stud on 07/11/2024.
-//
-
 import Foundation
 import SwiftUI
 import CoreLocation
@@ -12,7 +5,21 @@ import CoreLocation
 struct VotingAnswerOption: Hashable, Codable, Identifiable {
     var id: Int
     var answer: String
-    var amount: Int
+    var voterIds: [Int]
+    
+    mutating func addVote(userId: Int) {
+        let index = self.voterIds.firstIndex(of: userId)
+        if index != nil {
+            self.voterIds.remove(at: index!)
+            return
+        }
+        
+        self.voterIds.append(userId)
+    }
+    
+    func userVoted(userId: Int) -> Bool {
+        self.voterIds.contains(userId)
+    }
 }
 
 struct Vote: Hashable, Codable, Identifiable {
@@ -28,7 +35,7 @@ struct Vote: Hashable, Codable, Identifiable {
         var sum = 0
           
         for x in 0..<options.count{
-            sum += options[x].amount
+            sum += options[x].voterIds.count
         }
         
         return sum

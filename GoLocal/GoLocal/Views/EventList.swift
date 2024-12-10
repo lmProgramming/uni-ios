@@ -6,6 +6,7 @@ struct EventList: View {
     @State private var isCreatingNewEvent = false
     @State private var showFilterSheet = false
     @State private var selectedCategory: String = "All"
+    @Binding var loggedIn: Bool
     private let eventPageTitle = NSLocalizedString("events", comment: "").capitalized
     
     var body: some View {
@@ -20,6 +21,10 @@ struct EventList: View {
                 }
                 .navigationTitle(eventPageTitle)
                 .searchable(text: $searchText, isPresented: $searchIsActive)
+                
+                Spacer()
+                
+                BottomTabBar(loggedIn: $loggedIn, selected: 0)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -82,8 +87,4 @@ struct FilterSheetView: View {
             })
         }
     }
-}
-
-#Preview {
-    EventList()
 }

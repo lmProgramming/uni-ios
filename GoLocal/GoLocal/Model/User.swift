@@ -1,12 +1,3 @@
-//
-//  Event 2.swift
-//  GoLocal
-//
-//  Created by stud on 21/11/2024.
-//
-
-
-
 import Foundation
 import SwiftUI
 import CoreLocation
@@ -36,7 +27,7 @@ var users: [User] = [
     User(id: 2, name: "Piotr", surname: "Lopata", email: "lop1234@gmail.com", passwordHash: hash(data: "1234".data(using: .utf8)!)),
     User(id: 3, name: "Fabia", surname: "Lopata", email: "12347@gmail.com", passwordHash: hash(data: "1234".data(using: .utf8)!)),
     User(id: 4, name: "Patryk", surname: "Piotr", email: "12345@gmail.com", passwordHash: hash(data: "1234".data(using: .utf8)!)),
-    User(id: -1, name: "guest", surname: "guest", email: "none", passwordHash: hash(data: "".data(using: .utf8)!))
+    User(id: -1, name: "guest", surname: "guest", email: "1", passwordHash: hash(data: "1".data(using: .utf8)!))
 ]
 
 func findUserEvents(userId: Int) -> [Event] {

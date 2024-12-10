@@ -8,12 +8,12 @@
             {
                 "id": 1,
                 "answer": "1.12.2024",
-                "amount": 11252
+                "voterIds": [0, 1, 2]
             },
             {
                 "id": 2,
                 "answer": "2.12.2024",
-                "amount": 19312
+                "voterIds": []
             }
         ]
     },
@@ -26,13 +26,95 @@
             {
                 "id": 1,
                 "answer": "Wroclaw",
-                "amount": 84122
+                "voterIds": [1, 2]
             },
             {
                 "id": 2,
                 "answer": "Swidnica",
-                "amount": 23452
+                "voterIds": [3, 4, 5, 6]
             }
         ]
     },
+    {
+        "id": 3,
+        "eventId": 2,
+        "question": "Vote on the date",
+        "endDate": "2024-11-15T16:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "16.12.2024",
+                "voterIds": [1, 2, 3]
+            },
+            {
+                "id": 2,
+                "answer": "20.12.2024",
+                "voterIds": []
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "eventId": 3,
+        "question": "Vote on the music genre",
+        "endDate": "2024-11-15T16:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Pop",
+                "voterIds": [0, 1]
+            },
+            {
+                "id": 2,
+                "answer": "Rock",
+                "voterIds": [2, 3, 4]
+            },
+            {
+                "id": 3,
+                "answer": "Electronic",
+                "voterIds": [5, 6]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "eventId": 4,
+        "question": "Vote on the match duration",
+        "endDate": "2024-11-16T16:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "90 minutes",
+                "voterIds": [1, 2, 3]
+            },
+            {
+                "id": 2,
+                "answer": "120 minutes",
+                "voterIds": []
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "eventId": 5,
+        "question": "Vote on the type of cuisine",
+        "endDate": "2024-11-17T17:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Italian",
+                "voterIds": [2, 3, 4]
+            },
+            {
+                "id": 2,
+                "answer": "French",
+                "voterIds": [5, 6]
+            },
+            {
+                "id": 3,
+                "answer": "Asian",
+                "voterIds": [7, 8]
+            }
+        ]
+    }
 ]

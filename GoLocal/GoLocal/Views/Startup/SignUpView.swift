@@ -1,11 +1,3 @@
-//
-//  SignUpView.swift
-//  GoLocal
-//
-//  Created by stud on 28/11/2024.
-//
-
-
 import SwiftUI
 
 struct SignUpView: View {
@@ -15,6 +7,7 @@ struct SignUpView: View {
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
     @State private var showingAlert: Bool = false
+    @State private var alertText: String = ""
     @Binding var loggedIn: Bool
     
     var body: some View {
@@ -52,6 +45,9 @@ struct SignUpView: View {
                 TextField("Enter your email", text: $email)
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+                    .autocorrectionDisabled(true)  // Disable autocorrection
+                    .keyboardType(.emailAddress)  // Set keyboard type to email
+                    .textInputAutocapitalization(.never)  // Ensure no capitalization
             }
             .padding()
 
@@ -59,7 +55,7 @@ struct SignUpView: View {
                 Text("Password")
                     .font(.headline)
                     .foregroundColor(.gray)
-                SecureField("Enter your password", text: $password)
+                SecureInputView("Enter your password", text: $password)
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
             }
@@ -69,7 +65,7 @@ struct SignUpView: View {
                 Text("Confirm Password")
                     .font(.headline)
                     .foregroundColor(.gray)
-                SecureField("Confirm your password", text: $confirmPassword)
+                SecureInputView("Confirm your password", text: $confirmPassword)
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
             }
@@ -87,7 +83,7 @@ struct SignUpView: View {
             }
             .padding(.top, 20)
             .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Could not log in"), message: Text("Something went wrong"), dismissButton: .default(Text("Got it!")))
+                Alert(title: Text("Could not log in"), message: Text(alertText), dismissButton: .default(Text("Got it!")))
             }
             
             Spacer()
@@ -103,6 +99,19 @@ struct SignUpView: View {
         
         guard password == confirmPassword else {
             showingAlert = true
+            alertText = "Passwords don't match"
+            return
+        }
+        
+        guard isValidEmail(email) else {
+            showingAlert = true
+            alertText = "Wrong email format"
+            return
+        }
+        
+        guard isValidPassword(password: password) else {
+            showingAlert = true
+            alertText = "Password too short"
             return
         }
 
@@ -118,5 +127,17 @@ struct SignUpView: View {
         }
         
         showingAlert = true
+        alertText = "User already exists. Please log in instead."
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    func isValidPassword(password: String) -> Bool {
+        return password.count >= 8
     }
 }

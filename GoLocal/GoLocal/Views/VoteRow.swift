@@ -1,10 +1,3 @@
-//
-//  LandmarkRow.swift
-//  Landmarks
-//
-//  Created by stud on 15/10/2024.
-//
-
 import SwiftUI
 
 struct VoteRow: View {
@@ -37,16 +30,18 @@ struct VoteRowTop: View {
 }
 
 struct VoteRowBottom: View {
-    var vote: Vote
+    @State var vote: Vote
     var event: Event
     private let endsInText = NSLocalizedString("ends_in", comment: "").capitalizingFirstLetter()
     
     var body: some View {
-        let totalVotesCount = vote.totalVotesCount()
         VStack {
             VStack {
-                ForEach(vote.options) { option in
-                    VoteOption(votingOption: option, totalVotes: totalVotesCount)
+                ForEach(0..<vote.options.count, id: \.self) { index in
+                    VoteOption(
+                        votingOption: $vote.options[index],
+                        totalVotes: vote.totalVotesCount()
+                    )
                 }
             }
             Text(endsInText + " " + dateFormatter.string(from: vote.endDate))

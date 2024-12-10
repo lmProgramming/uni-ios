@@ -1,11 +1,3 @@
-//
-//  ChangePasswordView.swift
-//  GoLocal
-//
-//  Created by stud on 28/11/2024.
-//
-
-
 import SwiftUI
 
 struct ChangePasswordView: View {

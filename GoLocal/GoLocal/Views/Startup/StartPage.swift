@@ -11,10 +11,8 @@ struct StartPage: View {
                 VStack {
                     Text("Welcome to")
                         .font(.system(size: 50, weight: .black))
-                        .foregroundColor(.black)
                     Text("GoLocal!")
                         .font(.system(size: 50, weight: .black))
-                        .foregroundColor(.black)
                 }
                 .multilineTextAlignment(.center)
                 .padding(.top, 70)
@@ -68,6 +66,6 @@ struct StartPage: View {
 }
 
 #Preview {
-    @State var loggedIn = false
+    @Previewable @State var loggedIn = false
     return StartPage(loggedIn: $loggedIn)
 }

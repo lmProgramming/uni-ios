@@ -8,15 +8,9 @@
         "imageName": "hiddenlake",
         "ownerId": 0,
         "category": "Learning",
-        "location": {
-            "city": "Wroclaw",
-            "country": "PL",
-            "streetName": "Ladna",
-            "houseId": "3/25",
-            "coordinates": {
-                "latitude": 51.1093,
-                "longitude": 17.0386
-            },
+        "coordinates": {
+            "latitude": 51.1093,
+            "longitude": 17.0386
         }
     },
     {
@@ -28,15 +22,9 @@
         "imageName": "icybay",
         "ownerId": 0,
         "category": "Learning",
-        "location": {
-            "city": "Wroclaw",
-            "country": "PL",
-            "streetName": "Piekna",
-            "houseId": "3/25",
-            "coordinates": {
-                "latitude": 51.1093,
-                "longitude": 17.0486
-            },
+        "coordinates": {
+            "latitude": 51.1093,
+            "longitude": 17.0486
         }
     },
     {
@@ -45,18 +33,40 @@
         "startDate": "2024-11-15T10:00:00Z",
         "endDate": "2024-11-15T16:00:00Z",
         "description": "A full-day music party.",
-        "imageName": "icybay",
+        "imageName": "umbagog",
         "ownerId": 0,
         "category": "Music",
-        "location": {
-            "city": "Wroclaw",
-            "country": "PL",
-            "streetName": "Przepiekna",
-            "houseId": "3/25",
-            "coordinates": {
-                "latitude": 51.2093,
-                "longitude": 17.0486
-            },
+        "coordinates": {
+            "latitude": 51.2093,
+            "longitude": 17.0486
         }
     },
+    {
+        "id": 4,
+        "name": "Football Tournament",
+        "startDate": "2024-11-16T10:00:00Z",
+        "endDate": "2024-11-16T18:00:00Z",
+        "description": "An exciting football tournament for teams.",
+        "imageName": "charleyrivers",
+        "ownerId": 1,
+        "category": "Sports",
+        "coordinates": {
+            "latitude": 51.2095,
+            "longitude": 17.0380
+        }
+    },
+    {
+        "id": 5,
+        "name": "Cooking Class",
+        "startDate": "2024-11-17T14:00:00Z",
+        "endDate": "2024-11-17T17:00:00Z",
+        "description": "Learn the art of cooking delicious meals.",
+        "imageName": "chincoteague",
+        "ownerId": 2,
+        "category": "Learning",
+        "coordinates": {
+            "latitude": 51.1120,
+            "longitude": 17.0300
+        }
+    }
 ]

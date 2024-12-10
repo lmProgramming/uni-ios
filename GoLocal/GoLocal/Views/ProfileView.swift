@@ -8,12 +8,15 @@ struct ProfileView: View {
     @AppStorage("selectedLanguage") private var selectedLanguage = "English"
     
     @State private var allowNotifications = false
+    @State private var allowGps = false
     
     @State private var isLogOutAlertPresented = false
     @State private var isDeleteAccountAlertPresented = false
     
     @Binding var loggedIn: Bool
     
+    @StateObject private var locationManager = LocationManager()
+
     var body: some View {
         NavigationView {
             VStack {
@@ -49,19 +52,25 @@ struct ProfileView: View {
                         Text("Allow Notifications")
                     }
 
-                    Toggle(isOn: .constant(true)) {
+                    Toggle(isOn: $allowGps) {
                         Text("Allow GPS")
+                            .onChange(of: allowGps) { newValue in
+                                if newValue {
+                                    locationManager.requestLocationPermission()
+                                    locationManager.startTrackingLocation()
+                                } else {
+                                    locationManager.stopTrackingLocation()
+                                }
+                            }
                     }
 
-                    Spacer()
-                    Spacer()
                     Spacer()
                     Spacer()
                     
                     Button("Log Out") {
                         isLogOutAlertPresented = true
                     }
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.red)
                     .alert(isPresented: $isLogOutAlertPresented) {
                         Alert(title: Text("Are you sure?"),
                               message: Text("Do you really want to log out?"),
@@ -71,7 +80,7 @@ struct ProfileView: View {
                               secondaryButton: .cancel())
                     }
                     
-                    Button("Delete Account") {
+                    /*Button("Delete Account") {
                         isDeleteAccountAlertPresented = true
                     }
                     .foregroundColor(.red)
@@ -79,10 +88,10 @@ struct ProfileView: View {
                         Alert(title: Text("Are you sure?"),
                               message: Text("This action is permanent and cannot be undone."),
                               primaryButton: .destructive(Text("Delete Account"), action: {
-                                  deleteAccount()
+                            deleteAccount(email: user.email)
                               }),
                               secondaryButton: .cancel())
-                    }
+                    }*/
                 }
                 .navigationTitle(profilePageTitle + ", " + user.name)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -91,7 +100,7 @@ struct ProfileView: View {
                 
                 Spacer()
                 
-                BottomTabBar(selected: 3, loggedIn: $loggedIn)
+                BottomTabBar(loggedIn: $loggedIn, selected: 3)
             }
         }
     }
@@ -104,15 +113,18 @@ struct ProfileView: View {
         loggedIn = false
     }
     
-    func deleteAccount() {
-        loggedIn = false
-        if let index = users.firstIndex(of: user) {
+    func deleteAccount(email: String) {
+        print(email)
+        if let index = users.firstIndex(where: { $0.email == email }) {
+            print("Deleting user at index \(index): \(users[index])")
             users.remove(at: index)
         }
+        
+        loggedIn = false
     }
 }
 
 #Preview {
-    @State var loggedIn: Bool = false
+    @Previewable @State var loggedIn: Bool = true
     ProfileView(loggedIn: $loggedIn)
 }

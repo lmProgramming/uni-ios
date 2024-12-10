@@ -1,51 +1,89 @@
-//
-//  LandmarkDetail.swift
-//  Landmarks
-//
-//  Created by stud on 15/10/2024.
-//
-
 import SwiftUI
+import CoreLocation
+
+class EventDetailViewModel: ObservableObject {
+    @Published var locationText: String? = nil
+    @Published var relatedVotes: [Vote] = []
+    
+    var event: Event
+    
+    init(event: Event) {
+        self.event = event
+        fetchLocationText()
+        fetchRelatedVotes()
+    }
+    
+    private func fetchLocationText() {
+        getLocationFromCoordinates(event.coordinates) { [weak self] address in
+            DispatchQueue.main.async {
+                self?.locationText = address
+            }
+        }
+    }
+    
+    private func fetchRelatedVotes() {
+        self.relatedVotes = votes.filter { $0.eventId == event.id }
+    }
+}
 
 struct EventDetail: View {
-    var event: Event    
+    @StateObject private var viewModel: EventDetailViewModel
     private let startsOnText = NSLocalizedString("starts_on", comment: "").capitalizingFirstLetter()
     private let endsInText = NSLocalizedString("ends_in", comment: "").capitalizingFirstLetter()
     
+    init(event: Event) {
+        _viewModel = StateObject(wrappedValue: EventDetailViewModel(event: event))
+    }
+    
     var body: some View {
         ScrollView {
-            MapInsideView(coordinate: event.location.locationCoordinate, label: event.location.description).frame(height: 300)
+            MapInsideView(coordinate: viewModel.event.cllCoordinates, label: viewModel.locationText ?? "Fetching location...")
+                .frame(height: 300)
             
-            CircleImage(image: event.image)
+            CircleImage(image: viewModel.event.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
-                Text(event.name).font(.title).foregroundStyle(.black)
+                Text(viewModel.event.name).font(.title)
                 HStack {
-                    Text(startsOnText + " " + dateFormatter.string(from: event.startDate) + getEndText)
+                    Text(startsOnText + " " + dateFormatter.string(from: viewModel.event.startDate) + getEndText)
                 }
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 
-                Text(event.location.description).font(.subheadline)
+                if let locationText = viewModel.locationText {
+                    Text(locationText).font(.subheadline)
+                } else {
+                    Text("Fetching location...").font(.subheadline)
+                }
+                
                 Divider()
                 
                 Text("about")
                     .font(.title2)
-                Text(event.description)
+                Text(viewModel.event.description)
             }
             .padding()
             
             Spacer()
             
-            let relatedVotes = findRelatedVotes;
-            if !relatedVotes.isEmpty
-            {
+            Button(action: navigateToLocation) {
+                Text("Navigate to")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+            }
+            .padding()
+            
+            if !viewModel.relatedVotes.isEmpty {
                 NavigationSplitView {
-                    List(findRelatedVotes) { vote in
+                    List(viewModel.relatedVotes) { vote in
                         NavigationLink {
-                            VoteRow(vote: vote, event: event)
+                            VoteRow(vote: vote, event: viewModel.event)
                         } label: {
                             Text(String(vote.question))
                         }
@@ -56,17 +94,24 @@ struct EventDetail: View {
                 }
             }
         }
-        .navigationTitle(event.name)
+        .navigationTitle(viewModel.event.name)
         .navigationBarTitleDisplayMode(.inline)
     }
     
-    var findRelatedVotes: [Vote] {
-        return votes.filter { $0.eventId == event.id }
+    var getEndText: String {
+        return viewModel.event.endDate == nil ? "" : ("\n" + endsInText + " " + dateFormatter.string(from: viewModel.event.endDate!))
     }
     
-    var getEndText: String {
-        return event.endDate == nil ? "" :
-        ("\n" + endsInText + " " + dateFormatter.string(from: event.endDate!))
+    private func navigateToLocation() {
+        let latitude = viewModel.event.coordinates.latitude
+        let longitude = viewModel.event.coordinates.longitude
+        let mapURL = URL(string: "maps://?q=\(latitude),\(longitude)")!
+        
+        if UIApplication.shared.canOpenURL(mapURL) {
+            UIApplication.shared.open(mapURL)
+        } else {
+            print("Cannot open Maps app")
+        }
     }
 }
 

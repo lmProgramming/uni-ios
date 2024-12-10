@@ -1,10 +1,3 @@
-//
-//  ModelData.swift
-//  Landmarks
-//
-//  Created by stud on 15/10/2024.
-//
-
 import Foundation
 
 var events: [Event] = load("eventData.json")

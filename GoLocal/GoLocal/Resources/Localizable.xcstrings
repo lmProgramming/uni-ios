@@ -18,6 +18,7 @@
       }
     },
     "Accessory View" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -29,6 +30,298 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Widok akcesoriów"
+          }
+        }
+      }
+    },
+    "Add Option" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj opcje"
+          }
+        }
+      }
+    },
+    "Allow GPS" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozwól na GPS"
+          }
+        }
+      }
+    },
+    "Allow Notifications" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozwól na powiadomienia"
+          }
+        }
+      }
+    },
+    "Are you sure?" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jesteś pewien?"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
+          }
+        }
+      }
+    },
+    "Category" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategoria"
+          }
+        }
+      }
+    },
+    "Change Email" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmien maila"
+          }
+        }
+      }
+    },
+    "Change Image" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmien obrazek"
+          }
+        }
+      }
+    },
+    "Change Password" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmien haslo"
+          }
+        }
+      }
+    },
+    "Change Username" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień nazwę uzytkownika"
+          }
+        }
+      }
+    },
+    "Choose category:" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz kategorie:"
+          }
+        }
+      }
+    },
+    "City" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miasto"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamknij"
+          }
+        }
+      }
+    },
+    "Confirm Password" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potwierdź haslo"
+          }
+        }
+      }
+    },
+    "Confirm your password" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potwierdź swoje haslo"
+          }
+        }
+      }
+    },
+    "Coordinates (Latitude, Longitude):" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koordynaty (szerokość, wysokość)"
+          }
+        }
+      }
+    },
+    "Could not log in" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się zalogować "
+          }
+        }
+      }
+    },
+    "Country" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panstwo"
+          }
+        }
+      }
+    },
+    "Create a New Event" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stwórz nowe wydarzenie"
+          }
+        }
+      }
+    },
+    "Create a New Vote" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stwórz nowe glosowanie"
+          }
+        }
+      }
+    },
+    "Create New Event" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stwórz nowe wydarzenie"
+          }
+        }
+      }
+    },
+    "Create New Vote" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stworz nowe glosowanie"
+          }
+        }
+      }
+    },
+    "Dark Mode (experimental)" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciemny Tryb (eksperymentalny)"
+          }
+        }
+      }
+    },
+    "Description:" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opis:"
+          }
+        }
+      }
+    },
+    "Do you really want to log out?" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na pewno chcesz się wylogować? "
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrobione"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "End Date" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koniec"
+          }
+        }
+      }
+    },
+    "End Date (Optional):" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koniec (opcjonalny)"
           }
         }
       }
@@ -50,6 +343,127 @@
         }
       }
     },
+    "English" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English"
+          }
+        }
+      }
+    },
+    "Enter New Email" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz nowego maila"
+          }
+        }
+      }
+    },
+    "Enter New Password" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz nowe haslo"
+          }
+        }
+      }
+    },
+    "Enter New Username" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz nowa nazwę uzytkownika"
+          }
+        }
+      }
+    },
+    "Enter vote question" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz pytanie"
+          }
+        }
+      }
+    },
+    "Enter your email" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz maila"
+          }
+        }
+      }
+    },
+    "Enter your first name" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz imie"
+          }
+        }
+      }
+    },
+    "Enter your last name" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz nazwisko"
+          }
+        }
+      }
+    },
+    "Enter your password" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz haslo"
+          }
+        }
+      }
+    },
+    "Error" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blad"
+          }
+        }
+      }
+    },
+    "Event Image (Optional):" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obrazek wydarzenia (opcjonalne)"
+          }
+        }
+      }
+    },
+    "Event Name" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nazwa Wydarzenia"
+          }
+        }
+      }
+    },
     "events" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -63,6 +477,76 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "wydarzenia"
+          }
+        }
+      }
+    },
+    "Fetching location..." : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zbieram lokalizacje…"
+          }
+        }
+      }
+    },
+    "Filter" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtr"
+          }
+        }
+      }
+    },
+    "Filters" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtry"
+          }
+        }
+      }
+    },
+    "First Name" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imie"
+          }
+        }
+      }
+    },
+    "GoLocal!" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GoLocal!"
+          }
+        }
+      }
+    },
+    "Got it!" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrozumiano!"
+          }
+        }
+      }
+    },
+    "hello" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "witaj"
           }
         }
       }
@@ -84,6 +568,7 @@
       }
     },
     "Home" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -99,7 +584,160 @@
         }
       }
     },
+    "House ID" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID Domu"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jezyk"
+          }
+        }
+      }
+    },
+    "Last Name" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nazwisko"
+          }
+        }
+      }
+    },
+    "Latitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szerokosc"
+          }
+        }
+      }
+    },
+    "Location Information:" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informacje lokalizacji:"
+          }
+        }
+      }
+    },
+    "Log In" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaloguj sie"
+          }
+        }
+      }
+    },
+    "Log Out" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyloguj sie"
+          }
+        }
+      }
+    },
+    "Login" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaloguj sie"
+          }
+        }
+      }
+    },
+    "Longitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wysokość"
+          }
+        }
+      }
+    },
+    "Map" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa"
+          }
+        }
+      }
+    },
+    "Navigate to" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nawiguj do"
+          }
+        }
+      }
+    },
+    "Option %lld" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opcja %lld"
+          }
+        }
+      }
+    },
+    "or" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lub"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haslo"
+          }
+        }
+      }
+    },
+    "Polish" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Polski"
+          }
+        }
+      }
+    },
     "Profile" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -131,6 +769,86 @@
         }
       }
     },
+    "Save" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz"
+          }
+        }
+      }
+    },
+    "Save Event" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz Wydarzenie"
+          }
+        }
+      }
+    },
+    "Save Vote" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz Glosowanie"
+          }
+        }
+      }
+    },
+    "Select Category" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz kategorie:"
+          }
+        }
+      }
+    },
+    "Select End Date:" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz datę końcowa:"
+          }
+        }
+      }
+    },
+    "Select Event" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz wydarzenie"
+          }
+        }
+      }
+    },
+    "Select Image" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz obraz"
+          }
+        }
+      }
+    },
+    "Select Related Event:" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz powiązane wydarzenie:"
+          }
+        }
+      }
+    },
     "settings" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -149,6 +867,7 @@
       }
     },
     "Settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -181,6 +900,46 @@
         }
       }
     },
+    "Sign Up" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zarejestruj sie"
+          }
+        }
+      }
+    },
+    "Something went wrong" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cos poszło nie tak"
+          }
+        }
+      }
+    },
+    "Start Date" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kończy sie"
+          }
+        }
+      }
+    },
+    "Start Date:" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaczyna się: "
+          }
+        }
+      }
+    },
     "starts_on" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -198,7 +957,18 @@
         }
       }
     },
+    "Street Name" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nazwa ulicy"
+          }
+        }
+      }
+    },
     "Vote ID: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -210,6 +980,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ID głosowania: %lld"
+          }
+        }
+      }
+    },
+    "Vote Options:" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opcje glosowania:"
           }
         }
       }
@@ -260,6 +1040,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "głosowania"
+          }
+        }
+      }
+    },
+    "Welcome to" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Witaj w "
           }
         }
       }

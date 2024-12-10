@@ -4,6 +4,7 @@ struct VotesList: View {
     @State private var searchText = ""
     @State private var searchIsActive = false
     @State private var isCreatingNewVote = false
+    @Binding var loggedIn: Bool
     private let votePageTitle = NSLocalizedString("votes", comment: "")
 
     var body: some View {
@@ -25,9 +26,13 @@ struct VotesList: View {
                         }
                     }
                 }
-                .navigationTitle(votePageTitle).foregroundColor(.black)
+                .navigationTitle(votePageTitle)
                 .searchable(text: $searchText, isPresented: $searchIsActive)
                 .padding()
+                
+                Spacer()
+                
+                BottomTabBar(loggedIn: $loggedIn, selected: 1)
             }
             .toolbar {
                 if findUserEvents(userId: user.id).count > 0
@@ -78,5 +83,6 @@ struct VotesList: View {
 }
 
 #Preview {
-    VotesList()
+    @Previewable @State var loggedIn: Bool = true
+    VotesList(loggedIn: $loggedIn)
 }

@@ -1,10 +1,3 @@
-//
-//  LandmarkDetail.swift
-//  Landmarks
-//
-//  Created by stud on 15/10/2024.
-//
-
 import SwiftUI
 
 struct VoteDetail: View {

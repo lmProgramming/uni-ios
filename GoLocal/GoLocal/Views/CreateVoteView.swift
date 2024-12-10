@@ -3,11 +3,13 @@ import SwiftUI
 struct CreateVoteView: View {
     @Binding var isPresented: Bool
     
-    @State private var voteQuestion: String = "" // Placeholder for the vote question input
-    @State private var selectedEvent: Event? = nil // To store the selected event
-    @State private var endDate: Date = Date() // To store the selected end date
-    @State private var voteOptions: [String] = [""] // List of vote options, with one initial empty option
-
+    @State private var voteQuestion: String = ""
+    @State private var selectedEvent: Event? = nil
+    @State private var endDate: Date = Date()
+    @State private var voteOptions: [String] = [""]
+    @State private var showingAlert: Bool = false
+    @State private var alertText: String = ""
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -98,16 +100,21 @@ struct CreateVoteView: View {
             .navigationBarItems(trailing: Button("Close") {
                 isPresented = false
             })
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Could not log in"), message: Text(alertText), dismissButton: .default(Text("Got it!")))
+            }
         }
     }
     
     func saveVote() {
         guard let selectedEvent = selectedEvent, !voteQuestion.isEmpty, !voteOptions.isEmpty else {
             print("Error: Missing event, vote question, or options.")
+            showingAlert = true
+            alertText = "Error: Missing event, vote question, or options."
             return
         }
         
-        let votingAnswerOptions = voteOptions.map { VotingAnswerOption(id: GetNextVoteID(), answer: $0, amount: 0) }
+        let votingAnswerOptions = voteOptions.map { VotingAnswerOption(id: GetNextVoteID(), answer: $0, voterIds: []) }
         
         let newVote = Vote(id: GetNextVoteID(), eventId: selectedEvent.id, question: voteQuestion, endDate: endDate, options: votingAnswerOptions)
         

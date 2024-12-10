@@ -1,9 +1,3 @@
-//
-//  SecureInputView.swift
-//  GoLocal
-//
-//  Created by stud on 03/12/2024.
-//
 import SwiftUI
     
 struct SecureInputView: View {
