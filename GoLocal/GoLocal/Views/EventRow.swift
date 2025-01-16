@@ -5,9 +5,7 @@ struct EventRow: View {
     
     var body: some View {
         HStack {
-            event.image
-                .resizable()
-                .frame(width: 50, height: 50)
+            CircleImage(image: event.image, size: 50, strokeSize: 2, shadowRadius: 2)
             Text(event.name)
         }
     }

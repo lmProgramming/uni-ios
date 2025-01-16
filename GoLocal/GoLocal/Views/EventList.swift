@@ -88,3 +88,8 @@ struct FilterSheetView: View {
         }
     }
 }
+
+#Preview("Turtle Rock") {
+    @Previewable @State var loggedIn: Bool = true
+    EventList(loggedIn: $loggedIn)
+}

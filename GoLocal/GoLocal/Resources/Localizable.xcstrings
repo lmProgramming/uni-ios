@@ -552,6 +552,7 @@
       }
     },
     "Hello" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -716,6 +717,9 @@
         }
       }
     },
+    "organizer" : {
+
+    },
     "Password" : {
       "localizations" : {
         "pl" : {
@@ -848,6 +852,9 @@
           }
         }
       }
+    },
+    "Send Test Notification" : {
+
     },
     "settings" : {
       "extractionState" : "manual",

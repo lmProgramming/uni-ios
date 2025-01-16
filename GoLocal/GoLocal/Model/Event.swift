@@ -12,9 +12,14 @@ struct Event: Hashable, Codable, Identifiable {
     var imageName: String
     var category: String
     var coordinates: Coordinates
+    var imageNames: [String]?
     
     var image: Image {
         Image(imageName)
+    }
+    
+    var images: [Image] {
+        imageNames?.map { Image($0) } ?? []
     }
     
     var cllCoordinates: CLLocationCoordinate2D {
