@@ -1,4 +1,4 @@
-# GoLocal
+# GoLocal - application made entirely in Swift
 
 ## Informacje dla prowadzącego
 
