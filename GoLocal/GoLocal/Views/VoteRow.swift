@@ -19,15 +19,16 @@ struct VoteRowTop: View {
     var body: some View {
         VStack {
             HStack {
-                event.image
-                    .resizable()
-                    .frame(width: 50, height: 50)
+                CircleImage(image: event.image, size: 50, strokeSize: 2, shadowRadius: 2)
                 Text(event.name)
+                    .foregroundColor(.primary)
             }
             Text(vote.question)
+                .foregroundColor(.primary)
         }
     }
 }
+
 
 struct VoteRowBottom: View {
     @State var vote: Vote
@@ -42,6 +43,7 @@ struct VoteRowBottom: View {
                         votingOption: $vote.options[index],
                         totalVotes: vote.totalVotesCount()
                     )
+                    .padding(2)
                 }
             }
             Text(endsInText + " " + dateFormatter.string(from: vote.endDate))
@@ -51,6 +53,6 @@ struct VoteRowBottom: View {
 
 #Preview("Turtle Rock") {
     Group {
-        VoteRow(vote: votes[0], event: events[0])
+        VoteRow(vote: votes[6], event: events[0])
     }
 }

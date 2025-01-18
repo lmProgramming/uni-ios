@@ -1,10 +1,10 @@
 import SwiftUI
+import UserNotifications
 
 struct ProfileView: View {
     private let profilePageTitle = NSLocalizedString("hello", comment: "").capitalized
     
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
-    
     @AppStorage("selectedLanguage") private var selectedLanguage = "English"
     
     @State private var allowNotifications = false
@@ -34,11 +34,10 @@ struct ProfileView: View {
                     }
 
                     Toggle(isOn: $isDarkMode) {
-                                       Text("Dark Mode (experimental)")
-                                   }
-                                   .onChange(of: isDarkMode) { newValue in
-                                   }
-                    
+                        Text("Dark Mode (experimental)")
+                    }
+                    .onChange(of: isDarkMode) { newValue in }
+
                     Picker("Language", selection: $selectedLanguage) {
                         Text("English").tag("English")
                         Text("Polish").tag("Polish")
@@ -50,6 +49,11 @@ struct ProfileView: View {
                     
                     Toggle(isOn: $allowNotifications) {
                         Text("Allow Notifications")
+                    }
+                    .onChange(of: allowNotifications) { newValue in
+                        if newValue {
+                            requestNotificationPermission()
+                        }
                     }
 
                     Toggle(isOn: $allowGps) {
@@ -63,6 +67,15 @@ struct ProfileView: View {
                                 }
                             }
                     }
+
+                    Button("Send Test Notification") {
+                        sendTestNotification()
+                    }
+                    .disabled(!allowNotifications)
+                    .padding()
+                    .background(allowNotifications ? Color.blue : Color.gray)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
 
                     Spacer()
                     Spacer()
@@ -79,19 +92,6 @@ struct ProfileView: View {
                               }),
                               secondaryButton: .cancel())
                     }
-                    
-                    /*Button("Delete Account") {
-                        isDeleteAccountAlertPresented = true
-                    }
-                    .foregroundColor(.red)
-                    .alert(isPresented: $isDeleteAccountAlertPresented) {
-                        Alert(title: Text("Are you sure?"),
-                              message: Text("This action is permanent and cannot be undone."),
-                              primaryButton: .destructive(Text("Delete Account"), action: {
-                            deleteAccount(email: user.email)
-                              }),
-                              secondaryButton: .cancel())
-                    }*/
                 }
                 .navigationTitle(profilePageTitle + ", " + user.name)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -113,14 +113,33 @@ struct ProfileView: View {
         loggedIn = false
     }
     
-    func deleteAccount(email: String) {
-        print(email)
-        if let index = users.firstIndex(where: { $0.email == email }) {
-            print("Deleting user at index \(index): \(users[index])")
-            users.remove(at: index)
+    func requestNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                print("Notification permission granted")
+            } else {
+                print("Notification permission denied")
+            }
         }
+    }
+
+    func sendTestNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Test Notification"
+        content.body = "This is a test notification."
+        content.sound = .default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
-        loggedIn = false
+        let request = UNNotificationRequest(identifier: "testNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error scheduling notification: \(error)")
+            } else {
+                print("Test notification scheduled.")
+            }
+        }
     }
 }
 

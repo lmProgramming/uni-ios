@@ -2,6 +2,26 @@ import SwiftUI
 import MapKit
 import Contacts
 
+import MapKit
+
+extension CLLocationCoordinate2D: Equatable {
+    public static func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    }
+}
+
+extension MKCoordinateSpan: Equatable {
+    public static func ==(lhs: MKCoordinateSpan, rhs: MKCoordinateSpan) -> Bool {
+        return lhs.latitudeDelta == rhs.latitudeDelta && lhs.longitudeDelta == rhs.longitudeDelta
+    }
+}
+
+extension MKCoordinateRegion: Equatable {
+    public static func ==(lhs: MKCoordinateRegion, rhs: MKCoordinateRegion) -> Bool {
+        return lhs.center == rhs.center && lhs.span == rhs.span
+    }
+}
+
 struct MapView: View {
     @Binding var loggedIn: Bool
     var coordinate: CLLocationCoordinate2D
@@ -26,6 +46,7 @@ struct MapView: View {
                                 Text(event.name)
                                     .font(.caption)
                                     .padding(5)
+                                    .foregroundStyle(Color.black)
                                     .background(Color.white)
                                     .cornerRadius(5)
                                     .shadow(radius: 5)
@@ -82,13 +103,29 @@ struct MapView: View {
 struct MapInsideView: View {
     var coordinate: CLLocationCoordinate2D
     var label: String
-        
+    var events: [Event]
+    var eventAlwaysShown: Event
+    
     @State private var selectedEvent: Event? = nil
+    @State private var region: MKCoordinateRegion
+    
+    @State private var shouldShowAnnotations: Bool = false
+    
+    init(coordinate: CLLocationCoordinate2D, label: String, events: [Event], eventAlwaysShown: Event) {
+        self.coordinate = coordinate
+        self.label = label
+        self.events = events
+        _region = State(initialValue: MKCoordinateRegion(
+            center: coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        ))
+        self.eventAlwaysShown = eventAlwaysShown
+    }
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .topTrailing) {
-                Map(coordinateRegion: .constant(region), showsUserLocation: true, annotationItems: events) { event in
+                Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: shouldShowAnnotations ? events : [eventAlwaysShown]) { event in
                     MapAnnotation(coordinate: event.cllCoordinates) {
                         VStack {
                             Image(uiImage: UIImage(named: event.imageName) ?? UIImage())
@@ -111,6 +148,11 @@ struct MapInsideView: View {
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .onChange(of: region.span) { newSpan in
+                    let zoomLevelThreshold: Double = 0.05
+                    
+                    shouldShowAnnotations = newSpan.latitudeDelta < zoomLevelThreshold && newSpan.longitudeDelta < zoomLevelThreshold
+                }
                 
                 Text(label)
                     .font(.headline)
@@ -122,13 +164,6 @@ struct MapInsideView: View {
                     .foregroundStyle(Color.white)
             }
         }
-    }
-    
-    private var region: MKCoordinateRegion {
-        return MKCoordinateRegion(
-            center: coordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-        )
     }
 }
 

@@ -28,8 +28,12 @@ class EventDetailViewModel: ObservableObject {
 
 struct EventDetail: View {
     @StateObject private var viewModel: EventDetailViewModel
+    @State private var showGallery = false
+    @State private var selectedImage: Image?
+    
     private let startsOnText = NSLocalizedString("starts_on", comment: "").capitalizingFirstLetter()
     private let endsInText = NSLocalizedString("ends_in", comment: "").capitalizingFirstLetter()
+    private let organizerText = NSLocalizedString("organizer", comment: "").capitalizingFirstLetter()
     
     init(event: Event) {
         _viewModel = StateObject(wrappedValue: EventDetailViewModel(event: event))
@@ -37,12 +41,15 @@ struct EventDetail: View {
     
     var body: some View {
         ScrollView {
-            MapInsideView(coordinate: viewModel.event.cllCoordinates, label: viewModel.locationText ?? "Fetching location...")
+            MapInsideView(coordinate: viewModel.event.cllCoordinates, label: viewModel.locationText ?? "Fetching location...", events: events, eventAlwaysShown: viewModel.event)
                 .frame(height: 300)
             
             CircleImage(image: viewModel.event.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
+                .onTapGesture {
+                    showGallery.toggle()
+                }
             
             VStack(alignment: .leading) {
                 Text(viewModel.event.name).font(.title)
@@ -57,6 +64,10 @@ struct EventDetail: View {
                 } else {
                     Text("Fetching location...").font(.subheadline)
                 }
+                
+                let organizer = users[viewModel.event.ownerId]
+                                
+                Text(organizerText + ": " + (organizer == user ? " you!" : organizer.signature))
                 
                 Divider()
                 
@@ -96,6 +107,9 @@ struct EventDetail: View {
         }
         .navigationTitle(viewModel.event.name)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showGallery) {
+            GalleryView(images: viewModel.event.images)
+        }
     }
     
     var getEndText: String {

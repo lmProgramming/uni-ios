@@ -5,7 +5,10 @@
         "startDate": "2024-11-15T10:00:00Z",
         "endDate": "2024-11-15T16:00:00Z",
         "description": "A full-day workshop on SwiftUI development.",
-        "imageName": "hiddenlake",
+        "imageName": "charleyrivers",
+        "imageNames": [
+            "charleyrivers", "charleyrivers", "charleyrivers"
+        ],
         "ownerId": 0,
         "category": "Learning",
         "coordinates": {
@@ -19,7 +22,7 @@
         "startDate": "2024-11-15T10:00:00Z",
         "endDate": "2024-11-15T16:00:00Z",
         "description": "A full-day workshop on SwiftUI development.",
-        "imageName": "icybay",
+        "imageName": "chilkoottrail",
         "ownerId": 0,
         "category": "Learning",
         "coordinates": {
@@ -33,7 +36,7 @@
         "startDate": "2024-11-15T10:00:00Z",
         "endDate": "2024-11-15T16:00:00Z",
         "description": "A full-day music party.",
-        "imageName": "umbagog",
+        "imageName": "chincoteague",
         "ownerId": 0,
         "category": "Music",
         "coordinates": {
@@ -47,7 +50,7 @@
         "startDate": "2024-11-16T10:00:00Z",
         "endDate": "2024-11-16T18:00:00Z",
         "description": "An exciting football tournament for teams.",
-        "imageName": "charleyrivers",
+        "imageName": "hiddenlake",
         "ownerId": 1,
         "category": "Sports",
         "coordinates": {
@@ -61,12 +64,152 @@
         "startDate": "2024-11-17T14:00:00Z",
         "endDate": "2024-11-17T17:00:00Z",
         "description": "Learn the art of cooking delicious meals.",
-        "imageName": "chincoteague",
+        "imageName": "icybay",
         "ownerId": 2,
         "category": "Learning",
         "coordinates": {
             "latitude": 51.1120,
             "longitude": 17.0300
+        }
+    },
+    {
+        "id": 6,
+        "name": "Painting Exhibition",
+        "startDate": "2024-11-18T12:00:00Z",
+        "endDate": "2024-11-18T18:00:00Z",
+        "description": "A showcase of local artists' works.",
+        "imageName": "lakemcdonald",
+        "ownerId": 3,
+        "category": "Art",
+        "coordinates": {
+            "latitude": 51.1200,
+            "longitude": 17.0500
+        }
+    },
+    {
+        "id": 7,
+        "name": "Jazz Night",
+        "startDate": "2024-11-19T20:00:00Z",
+        "endDate": "2024-11-19T23:00:00Z",
+        "description": "A relaxing evening with live jazz music.",
+        "imageName": "rainbowlake",
+        "ownerId": 4,
+        "category": "Music",
+        "coordinates": {
+            "latitude": 51.1000,
+            "longitude": 17.0600
+        }
+    },
+    {
+        "id": 8,
+        "name": "Basketball Championship",
+        "startDate": "2024-11-20T10:00:00Z",
+        "endDate": "2024-11-20T20:00:00Z",
+        "description": "A thrilling basketball competition between top teams.",
+        "imageName": "silversalmoncreek",
+        "ownerId": 5,
+        "category": "Sports",
+        "coordinates": {
+            "latitude": 51.1100,
+            "longitude": 17.0800
+        }
+    },
+    {
+        "id": 9,
+        "name": "Food Truck Festival",
+        "startDate": "2024-11-21T11:00:00Z",
+        "endDate": "2024-11-21T19:00:00Z",
+        "description": "A celebration of the best food trucks in town.",
+        "imageName": "stmarylake",
+        "ownerId": 6,
+        "category": "Food",
+        "coordinates": {
+            "latitude": 51.0900,
+            "longitude": 17.0700
+        }
+    },
+    {
+        "id": 10,
+        "name": "Yoga Retreat",
+        "startDate": "2024-11-22T08:00:00Z",
+        "endDate": "2024-11-22T16:00:00Z",
+        "description": "A peaceful retreat to relax and focus on yoga.",
+        "imageName": "turtlerock",
+        "ownerId": 7,
+        "category": "All",
+        "coordinates": {
+            "latitude": 51.1050,
+            "longitude": 17.0900
+        }
+    },
+    {
+        "id": 11,
+        "name": "Baking Class",
+        "startDate": "2024-11-23T14:00:00Z",
+        "endDate": "2024-11-23T17:00:00Z",
+        "description": "Learn to bake delicious bread and pastries.",
+        "imageName": "twinlake",
+        "ownerId": 8,
+        "category": "Learning",
+        "coordinates": {
+            "latitude": 51.1150,
+            "longitude": 17.0650
+        }
+    },
+    {
+        "id": 12,
+        "name": "Street Art Workshop",
+        "startDate": "2024-11-24T10:00:00Z",
+        "endDate": "2024-11-24T16:00:00Z",
+        "description": "Learn the art of street murals and graffiti.",
+        "imageName": "umbagog",
+        "ownerId": 9,
+        "category": "Art",
+        "coordinates": {
+            "latitude": 51.1200,
+            "longitude": 17.0600
+        }
+    },
+    {
+        "id": 13,
+        "name": "Dance Battle",
+        "startDate": "2024-11-25T16:00:00Z",
+        "endDate": "2024-11-25T20:00:00Z",
+        "description": "A fun and competitive dance battle.",
+        "imageName": "umbagog",
+        "ownerId": 10,
+        "category": "Music",
+        "coordinates": {
+            "latitude": 51.1300,
+            "longitude": 17.0750
+        }
+    },
+    {
+        "id": 14,
+        "name": "Climbing Adventure",
+        "startDate": "2024-11-26T09:00:00Z",
+        "endDate": "2024-11-26T18:00:00Z",
+        "description": "An exciting rock climbing event for all levels.",
+        "imageName": "rainbowlake",
+        "ownerId": 11,
+        "category": "Sports",
+        "coordinates": {
+            "latitude": 51.1400,
+            "longitude": 17.0900
+        }
+    },
+    {
+        "id": 15,
+        "name": "Culinary Masters",
+        "startDate": "2024-11-27T12:00:00Z",
+        "endDate": "2024-11-27T20:00:00Z",
+        "description": "An exhibition and competition for top chefs.",
+        "imageName": "turtlerock",
+        "ownerId": 12,
+        "category": "Food",
+        "coordinates": {
+            "latitude": 51.1205,
+            "longitude": 17.0800
         }
     }
 ]

@@ -116,5 +116,225 @@
                 "voterIds": [7, 8]
             }
         ]
+    },
+    {
+        "id": 7,
+        "eventId": 6,
+        "question": "Vote on the exhibition theme",
+        "endDate": "2024-11-18T18:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Abstract Art",
+                "voterIds": [0, 1, 2]
+            },
+            {
+                "id": 2,
+                "answer": "Nature & Landscape",
+                "voterIds": [3, 4]
+            },
+            {
+                "id": 3,
+                "answer": "Portraits",
+                "voterIds": [5, 6, 7]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "eventId": 7,
+        "question": "Vote on the location",
+        "endDate": "2024-11-19T23:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Wroclaw",
+                "voterIds": [1, 2, 3]
+            },
+            {
+                "id": 2,
+                "answer": "Gdansk",
+                "voterIds": [4, 5]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "eventId": 8,
+        "question": "Vote on the team size",
+        "endDate": "2024-11-20T20:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "5 players",
+                "voterIds": [6, 7, 8]
+            },
+            {
+                "id": 2,
+                "answer": "7 players",
+                "voterIds": [9, 10]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "eventId": 9,
+        "question": "Vote on the food truck specialty",
+        "endDate": "2024-11-21T19:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Tacos",
+                "voterIds": [3, 4, 5]
+            },
+            {
+                "id": 2,
+                "answer": "Burgers",
+                "voterIds": [6, 7]
+            },
+            {
+                "id": 3,
+                "answer": "Asian Fusion",
+                "voterIds": [8, 9]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "eventId": 10,
+        "question": "Vote on the yoga style",
+        "endDate": "2024-11-22T16:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Vinyasa",
+                "voterIds": [0, 2, 4]
+            },
+            {
+                "id": 2,
+                "answer": "Hatha",
+                "voterIds": [5, 6]
+            },
+            {
+                "id": 3,
+                "answer": "Ashtanga",
+                "voterIds": [7, 8]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "eventId": 11,
+        "question": "Vote on the bakery specialty",
+        "endDate": "2024-11-23T17:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Bread",
+                "voterIds": [1, 2]
+            },
+            {
+                "id": 2,
+                "answer": "Pastries",
+                "voterIds": [3, 4, 5]
+            },
+            {
+                "id": 3,
+                "answer": "Cakes",
+                "voterIds": [6, 7, 8]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "eventId": 12,
+        "question": "Vote on the art supplies",
+        "endDate": "2024-11-24T16:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Spray Paint",
+                "voterIds": [3, 4, 5]
+            },
+            {
+                "id": 2,
+                "answer": "Markers",
+                "voterIds": [6, 7, 8]
+            },
+            {
+                "id": 3,
+                "answer": "Acrylic Paint",
+                "voterIds": [9, 10]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "eventId": 13,
+        "question": "Vote on the music genre for the battle",
+        "endDate": "2024-11-25T20:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Hip-Hop",
+                "voterIds": [0, 1, 2]
+            },
+            {
+                "id": 2,
+                "answer": "Breakdance",
+                "voterIds": [3, 4]
+            },
+            {
+                "id": 3,
+                "answer": "House",
+                "voterIds": [5, 6, 7]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "eventId": 14,
+        "question": "Vote on the climbing difficulty level",
+        "endDate": "2024-11-26T18:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Beginner",
+                "voterIds": [1, 2, 3]
+            },
+            {
+                "id": 2,
+                "answer": "Intermediate",
+                "voterIds": [4, 5]
+            },
+            {
+                "id": 3,
+                "answer": "Advanced",
+                "voterIds": [6, 7]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "eventId": 15,
+        "question": "Vote on the cooking challenge",
+        "endDate": "2024-11-27T20:00:00Z",
+        "options": [
+            {
+                "id": 1,
+                "answer": "Dessert",
+                "voterIds": [8, 9]
+            },
+            {
+                "id": 2,
+                "answer": "Main Course",
+                "voterIds": [10, 11]
+            },
+            {
+                "id": 3,
+                "answer": "Appetizers",
+                "voterIds": [12, 13]
+            }
+        ]
     }
 ]
